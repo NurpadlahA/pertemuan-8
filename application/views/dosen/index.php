@@ -4,35 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahasiswa</title>
+    <title>Dosen</title>
 </head>
 <body>
-    <div class="col-md-12">
-    <h3>Mahasiswa</h3>
+    <h3>Dosen</h3>
     <table border="1" class="table">
         <thead>
             <tr>
                 <th>No</th>
-                <th>NIM</th>
                 <th>Nama</th>
-                <th>Gender</th>
-                <th>IPK</th>
+                <th>Pendidikan</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php 
             $nomor = 1;
-            foreach ($mahasiswa as $mhs){
+            foreach ($dosen as $dsn){
             ?>
             <tr>
                 <td><?php echo $nomor ?></td>
-                <td><?php echo $mhs->nim ?></td>
-                <td><?php echo $mhs->nama ?></td>
-                <td><?php echo $mhs->gender?></td>
-                <td><?php echo $mhs->ipk ?></td>
+                <td><?php echo $dsn->nama?></td>
+                <td><?php echo $dsn->pendidikan ?></td>
                 <td>
-                    <a href="<?php echo "detail/$mhs->id" ?>">Detail</a>
+                    <a href="<?php echo base_url("index.php/dosen/detail/$dsn->id")?>">Detail</a>
                 </td>
             </tr>
 
@@ -42,6 +37,5 @@
             ?>
         </tbody>
     </table>
-    </div>
 </body>
 </html>
